@@ -1,5 +1,6 @@
 
-export const primary = 'purple';
+export const backgroundLeft =  'rgb(73, 74, 105)';
+export const backgroundRight = 'rgb(56, 51, 83)';;
 export const error = 'red';
 export const white = '#FFF';
 export const blue = 'rgb(94, 94, 243)';
