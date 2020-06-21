@@ -65,7 +65,8 @@ const Header = ({dialog}) => {
 
 
 	return <Wrapper>
-		<FormUpload 
+		<FormUpload
+			dialogId={dialog.id}
 			autoSubmit
 			action="http://127.0.0.1:4444/upload"
 			width="84px" 

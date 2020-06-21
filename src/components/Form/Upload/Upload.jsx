@@ -23,7 +23,7 @@ const Wrapper = styled(Block)`
 	}
 `;
 
-let Upload = ({ children, action, autoSubmit, onChange, width, height }) => {
+let Upload = ({ children, action, autoSubmit, onChange, width, height, dialogId }) => {
 	const onChangeLocal = React.useCallback((e) => {
 		e.preventDefault();
 		
@@ -43,6 +43,7 @@ let Upload = ({ children, action, autoSubmit, onChange, width, height }) => {
 	    		type="file" 
 	    		name="avatar"
 	    		onChange={onChangeLocal} />
+			<input name="dialogId" type="hidden" value={dialogId} />
 	    </form>
 	    {children}
 	</Wrapper>;
