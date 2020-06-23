@@ -23,8 +23,10 @@ const Wrapper = styled(Block)`
 	}
 `;
 const Avatar = (props) => (
+    console.log('props', props),
+        console.log('props.avatar',props.avatar),
     <Wrapper {...props}>
-        <Image src={avatarDefault}/>
+        <Image src={props.avatar ? props.avatar : avatarDefault}/>
         { props.showOnline &&  <CheckCircle />}
     </Wrapper>
 );
