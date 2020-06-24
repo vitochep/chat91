@@ -15,15 +15,17 @@ position: relative;
     
 `;
 const Header = ({dialog}) => {
-    console.log(dialog.avatar)
     const [showOptions, setShowOptions] = useState(false);
     const [modeEdit, setModeEdit] = useState(false);
     const [textValue, setTextValue] = useState(dialog.name);
     const [updatedValue, setUpdatedValue] = useState(dialog.name);
-    const {dialogAvatar, setDialogAvatar} = useState(dialog.avatar);
+    const {dialogAvatar, setDialogAvatar} = useState(()=>{
+        console.log('avatar', dialog.avatar)
+
+        return dialog.avatar;
+    })
     const messageEditing = useRef(null);
 
-    console.log(dialogAvatar)
 
     useEffect(() => {
         if (updatedValue !== dialog.name) {
@@ -37,7 +39,7 @@ const Header = ({dialog}) => {
         messageEditing.current.focus();
     };
 
-    const updateAvatar = (value) =>{
+    const updateAvatar = (value) => {
         setDialogAvatar(value)
     }
 
